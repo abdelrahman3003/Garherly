@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'textAnimatio.dart';
+import 'package:gatherly/core/constatnt/routApp.dart';
+import 'package:gatherly/view/splash/widgets/textAnimatio.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -17,7 +19,8 @@ class _SplashBodyState extends State<SplashBody>
   @override
   void initState() {
     animate();
-    
+    Get.offNamed(kWelcomeView);
+    super.initState();
   }
 
   @override
@@ -32,7 +35,7 @@ class _SplashBodyState extends State<SplashBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-      
+        const SizedBox(height: 6),
         textAnimation(slidinganmation: slidinganmation)
       ],
     );
