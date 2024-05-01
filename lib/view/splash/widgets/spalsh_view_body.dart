@@ -19,7 +19,7 @@ class _SplashBodyState extends State<SplashBody>
   @override
   void initState() {
     animate();
-    Get.offNamed(kWelcomeView);
+ //   Get.offNamed(kWelcomeView);
     super.initState();
   }
 

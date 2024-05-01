@@ -8,7 +8,7 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: ColorsApp.primary,
+      backgroundColor: AppColor.primary,
       body: WelcomeViewBody(),
     );
   }

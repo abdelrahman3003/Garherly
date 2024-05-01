@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class textAnimation extends StatelessWidget {
   const textAnimation({
@@ -15,10 +17,11 @@ class textAnimation extends StatelessWidget {
       builder: (context, _) {
         return SlideTransition(
           position: slidinganmation,
-          child: const Text(
-            "Read Free Books",
-            style: TextStyle(fontSize: 18),
+          child:  Text(
+            "Gatherly ",
+            style: TextStyle(fontSize: 48.sp,),
             textAlign: TextAlign.center,
+            
           ),
         );
       },
