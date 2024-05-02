@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/core/constatnt/routApp.dart';
+import 'package:gatherly/view/auth/signin/signin_view.dart';
 import 'package:gatherly/view/splash/widgets/textAnimatio.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -17,9 +18,9 @@ class _SplashBodyState extends State<SplashBody>
   late Animation<Offset> slidinganmation;
 
   @override
-  void initState() {
-    animate();
- //   Get.offNamed(kWelcomeView);
+   initState()  {
+     animate();
+    Get.offNamed(kSignInView);
     super.initState();
   }
 
@@ -41,7 +42,7 @@ class _SplashBodyState extends State<SplashBody>
     );
   }
 
-  void animate() {
+  animate() {
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidinganmation = Tween<Offset>(begin: Offset(0, 5), end: Offset.zero)

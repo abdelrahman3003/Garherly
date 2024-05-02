@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
+import 'package:gatherly/core/constatnt/routApp.dart';
 import 'package:gatherly/core/shared/app_button.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -62,7 +65,9 @@ class SignInView extends StatelessWidget {
                   ),
                   child: AppButton(
                     name: "Log in",
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(kJoinEventView);
+                    },
                   )),
             ),
             const Spacer(flex: 4),
