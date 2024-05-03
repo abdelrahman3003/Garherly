@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gatherly/controller/event_controller.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/core/shared/app_button.dart';
-import 'package:get/get.dart';
 
-class Join extends GetView<EventControllerImp> {
+class Join extends StatelessWidget {
   const Join({
     super.key,
     required this.color,

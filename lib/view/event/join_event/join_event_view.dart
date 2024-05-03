@@ -1,9 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gatherly/controller/event_controller.dart';
+import 'package:gatherly/controller/join_event.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/core/constatnt/routApp.dart';
-import 'package:gatherly/core/shared/app_button.dart';
 import 'package:gatherly/view/event/join_event/widget/join.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +13,9 @@ class JoinEventView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(EventControllerImp());
+    Get.put(JoinEventControllerImp());
     return Scaffold(
-        body: GetBuilder<EventControllerImp>(
+        body: GetBuilder<JoinEventControllerImp>(
       builder: (controller) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -123,15 +124,45 @@ class JoinEventView extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: AppColor.third,
                         borderRadius: BorderRadius.circular(30)),
-                    child: const Center(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.add, size: 45, color: AppColor.secondry),
-                        Icon(Icons.remove, size: 45, color: AppColor.secondry),
-                      ],
-                    )),
-                  )
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(kCreateEvent);
+                      },
+                      child: const Center(
+                          child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.add, size: 45, color: AppColor.secondry),
+                          Icon(Icons.remove,
+                              size: 45, color: AppColor.secondry),
+                        ],
+                      )),
+                    ),
+                  ),
+            const SizedBox(height: 20),
+
+            Container(
+              height: 177.h,
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              decoration: BoxDecoration(
+                  color: AppColor.third,
+                  borderRadius: BorderRadius.circular(30)),
+              child: !controller.test
+                  ? Center(
+                      child: Text(
+                        "the event title (example : hamood birthday)",
+                        style: TextStyle(fontSize: 15.sp),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : SizedBox(),
+              // Image.file(
+              //     File(
+              //         "/data/user/0/com.example.gatherly/cache/ae18bd8a-14ac-4020-a668-346b1b5b0496/Screenshot_20240503_035308_com.example.gatherly.jpg"),
+              //     fit: BoxFit.cover,
+              //   ),
+            ),
 
             // SvgPicture.asset(
             //   "assets/icons/iconPlus.svg",

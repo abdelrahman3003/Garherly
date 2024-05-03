@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/core/constatnt/routApp.dart';
-import 'package:gatherly/view/auth/signin/signin_view.dart';
 import 'package:gatherly/view/splash/widgets/textAnimatio.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
