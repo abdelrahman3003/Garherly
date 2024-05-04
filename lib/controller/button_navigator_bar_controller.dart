@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gatherly/view/home/chat_view.dart';
-import 'package:gatherly/view/home/groub_view.dart';
-import 'package:gatherly/view/home/home_view.dart';
-import 'package:gatherly/view/home/plus_view.dart';
+import 'package:gatherly/view/homepage/chat_view.dart';
+import 'package:gatherly/view/homepage/groub_view.dart';
+import 'package:gatherly/view/homepage/home_View.dart';
+import 'package:gatherly/view/homepage/profile_view.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 abstract class ButtonNavigatorBarController extends GetxController {
@@ -14,11 +14,10 @@ class ButtonNavigatorBarControllerImp extends ButtonNavigatorBarController {
   int pageCount = 0;
   bool isbar = true;
   List<Widget> pageList = [
-
+    const HomeView(),
+    const GroubView(),
     const ChatView(),
-    const PLusView(),
-
-
+    const ProfileView(),
   ];
 
   @override

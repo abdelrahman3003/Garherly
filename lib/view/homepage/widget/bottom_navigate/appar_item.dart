@@ -18,9 +18,9 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
       children: [
         IconButton(
           onPressed: () {
-            if (icon == Icons.chat) {
+            if (icon == Icons.group) {
               controller.changepage(1);
-            } else if (icon == Icons.add) {
+            } else if (icon == Icons.chat) {
               controller.changepage(2);
             } else if (icon == Icons.menu) {
               controller.changepage(3);

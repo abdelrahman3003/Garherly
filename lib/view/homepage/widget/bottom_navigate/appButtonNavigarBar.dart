@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/controller/button_navigator_bar_controller.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
-import 'package:gatherly/view/home/widget/bottom_navigate/appar_item.dart';
+import 'package:gatherly/view/homepage/widget/bottom_navigate/appar_item.dart';
 import 'package:get/get.dart';
 
 class AppBottomNavigatorBar extends StatelessWidget {
@@ -13,23 +13,21 @@ class AppBottomNavigatorBar extends StatelessWidget {
       builder: (controller) => BottomAppBar(
         color: AppColor.primary,
         shape: const CircularNotchedRectangle(),
-      
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             AppbarItem(
-              icon: Icons.group,
+              icon: Icons.home,
               //iconName: ConstanstValue.home,
               isactive: controller.pageCount == 0 ? true : false,
             ),
-            
             AppbarItem(
-              icon: Icons.chat,
+              icon: Icons.group,
               // iconName: ConstanstValue.favourite,
               isactive: controller.pageCount == 1 ? true : false,
             ),
             AppbarItem(
-              icon: Icons.add,
+              icon: Icons.chat,
               // iconName: ConstanstValue.setting,
               isactive: controller.pageCount == 2 ? true : false,
             ),

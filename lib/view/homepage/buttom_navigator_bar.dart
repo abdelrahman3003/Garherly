@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/controller/button_navigator_bar_controller.dart';
-import 'package:gatherly/view/home/widget/bottom_navigate/appButtonNavigarBar.dart';
+import 'package:gatherly/view/homepage/widget/bottom_navigate/appButtonNavigarBar.dart';
 import 'package:get/get.dart';
 
 class BottomNavigationScreen extends StatelessWidget {
@@ -11,7 +11,7 @@ class BottomNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ButtonNavigatorBarControllerImp());
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: GetBuilder<ButtonNavigatorBarControllerImp>(builder: (controller) {
         return Scaffold(
             appBar: AppBar(
@@ -30,13 +30,12 @@ class BottomNavigationScreen extends StatelessWidget {
                     icon: const Icon(Icons.more_horiz),
                   ),
                 ],
-                bottom: controller.isbar
-                    ? TabBar(tabs: [
-                        Tab(text: "tab11"),
-                        Tab(text: "tab2"),
-                        Tab(text: "tab3"),
+                bottom: controller.pageCount == 0
+                    ? const TabBar(tabs: [
+                        Tab(text: "About"),
+                        Tab(text: "Tasks"),
                       ])
-                    : PreferredSize(
+                    : const PreferredSize(
                         preferredSize: Size.zero, child: SizedBox())),
             bottomNavigationBar: const AppBottomNavigatorBar(),
             // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
