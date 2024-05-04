@@ -5,6 +5,6 @@ class GroubView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("GroubView"));
+    return Center(child: Text("GroubVieww"));
   }
 }
