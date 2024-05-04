@@ -5,6 +5,6 @@ class ChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Chat view"));
+    return const Center(child: Center(child: Text("data")));
   }
 }
