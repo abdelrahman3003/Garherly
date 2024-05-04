@@ -32,7 +32,7 @@ class BottomNavigationScreen extends StatelessWidget {
                 ],
                 bottom: controller.isbar
                     ? TabBar(tabs: [
-                        Tab(text: "tab1"),
+                        Tab(text: "tab11"),
                         Tab(text: "tab2"),
                         Tab(text: "tab3"),
                       ])
