@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/controller/button_navigator_bar_controller.dart';
 import 'package:gatherly/view/home/widget/bottom_navigate/appButtonNavigarBar.dart';
+import 'package:gatherly/view/home/widget/bottom_navigate/appButtonNavigarBar.dart';
 import 'package:get/get.dart';
 
 class BottomNavigationScreen extends StatelessWidget {
