@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/controller/join_event.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/core/constatnt/routApp.dart';
-import 'package:gatherly/view/event/join_event/widget/join.dart';
+import 'package:gatherly/view/event/widget/join_event/join.dart';
 import 'package:get/get.dart';
 
 class JoinEventView extends StatelessWidget {

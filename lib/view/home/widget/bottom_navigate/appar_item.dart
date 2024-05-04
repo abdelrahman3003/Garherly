@@ -15,7 +15,6 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Column(
-    
       children: [
         IconButton(
           onPressed: () {
@@ -23,15 +22,13 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
               controller.changepage(1);
             } else if (icon == Icons.add) {
               controller.changepage(2);
-            } else if (icon == Icons.settings) {
+            } else if (icon == Icons.menu) {
               controller.changepage(3);
             } else {
               controller.changepage(0);
             }
           },
-          icon: Icon(
-            
-            icon, color: isactive ? Colors.black : Colors.white),
+          icon: Icon(icon, color: isactive ? Colors.black : Colors.white),
         ),
         // Text(
         //   iconName,

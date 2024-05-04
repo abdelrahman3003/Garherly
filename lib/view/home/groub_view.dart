@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class GroubView extends StatelessWidget {
-  const GroubView({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const  Center(
-      child: Text("Groub View"),
-    );
+    return TabBarView(children: [
+      Center(child: Text("view 1")),
+      Center(child: Text("view 2")),
+      Center(child: Text("view 2")),
+    ]);
   }
 }

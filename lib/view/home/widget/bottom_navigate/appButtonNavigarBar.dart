@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/controller/button_navigator_bar_controller.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
-import 'package:gatherly/view/home/widget/appar_item.dart';
+import 'package:gatherly/view/home/widget/bottom_navigate/appar_item.dart';
 import 'package:get/get.dart';
 
 class AppBottomNavigatorBar extends StatelessWidget {
@@ -22,6 +22,7 @@ class AppBottomNavigatorBar extends StatelessWidget {
               //iconName: ConstanstValue.home,
               isactive: controller.pageCount == 0 ? true : false,
             ),
+            
             AppbarItem(
               icon: Icons.chat,
               // iconName: ConstanstValue.favourite,
