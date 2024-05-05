@@ -77,17 +77,18 @@ class SignInView extends StatelessWidget {
                   obscureText: controller.isScurePassword,
                 ),
                 const SizedBox(height: 20),
-                Center(
-                  child: Container(
-                      width: 260.w,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: AppColor.secondry,
-                      ),
-                      child: AppButton(
-                          name: "Log in", onPressed: controller.signIn)),
-                ),
+                     Center(
+                child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: AppColor.secondry,
+                    ),
+                    child: AppButton(
+                      name: "Log in",
+                      onPressed:  controller.signIn,
+                    )),
+              ),
                 const Spacer(flex: 4),
               ],
             ),

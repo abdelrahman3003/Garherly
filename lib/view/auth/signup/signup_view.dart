@@ -104,14 +104,16 @@ class SignUpView extends StatelessWidget {
                 const SizedBox(height: 20),
                 Center(
                   child: Container(
-                      width: 260.w,
-                      height: 40,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: AppColor.secondry,
                       ),
                       child: AppButton(
-                          name: "Sign Up", onPressed: controller.signUp)),
+                        name: "Sign Up",
+                        onPressed: controller.signUp,
+                      )),
                 ),
                 const Spacer(flex: 4),
               ],

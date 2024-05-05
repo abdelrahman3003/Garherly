@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/controller/home/task_detals_controller.dart';
-import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/view/homepage/widget/bottom_navigate/costom_appbar.dart';
-import 'package:gatherly/view/homepage/widget/home/checkbox_item.dart';
 import 'package:gatherly/view/homepage/widget/home/item_text_task_details.dart';
 import 'package:gatherly/view/homepage/widget/home/subtasks.dart';
 import 'package:get/get.dart';

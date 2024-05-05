@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, this.bottom});
+  const CustomAppBar(
+      {super.key, required this.title, this.bottom, this.leading});
   final String title;
   final PreferredSizeWidget? bottom;
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -16,12 +18,7 @@ class CustomAppBar extends StatelessWidget {
         leading: const Icon(
           Icons.arrow_back,
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_horiz),
-          ),
-        ],
+        actions: [leading ?? const SizedBox()],
         bottom: bottom);
   }
 }

@@ -8,6 +8,7 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 abstract class ButtonNavigatorBarController extends GetxController {
   changepage(int i);
   String appBarTilte();
+  
 }
 
 class ButtonNavigatorBarControllerImp extends ButtonNavigatorBarController {
