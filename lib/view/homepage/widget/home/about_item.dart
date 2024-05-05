@@ -23,17 +23,16 @@ class AboutItem extends StatelessWidget {
             height: 50.h,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: AppColor.secondry,
+              color: AppColor.third,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
               child: Text(
                 text,
                 style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white),
-                textAlign: TextAlign.center,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ))
       ],

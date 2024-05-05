@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gatherly/controller/home_controller.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
-import 'package:get/get.dart';
 
-class MessageText extends GetView<HomeControllerImp> {
+class MessageText extends StatelessWidget {
   const MessageText({super.key});
 
   @override
