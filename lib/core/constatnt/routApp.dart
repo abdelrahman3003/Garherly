@@ -23,13 +23,13 @@ const kAddTaskView = "/AddTaskView";
 
 const kHomeView = "/HomeView";
 List<GetPage<dynamic>>? getPages = [
-  GetPage(name: kSplashView, page: () => const SplashView()),
+  GetPage(name: "/", page: () => const SplashView()),
   GetPage(name: kWelcomeView, page: () => const WelcomeView()),
   GetPage(name: kSignInView, page: () => const SignInView()),
   GetPage(name: kSignUpView, page: () => const SignUpView()),
   GetPage(name: kJoinEventView, page: () => const JoinEventView()),
   GetPage(name: kCreateEvent, page: () => const CreateEvent()),
-  GetPage(name: "/", page: () => const BottomNavigationScreen()),
+  GetPage(name: kBottomNavigationScreen, page: () => const BottomNavigationScreen()),
   GetPage(name: kTaskDetailsView, page: () => const TaskDetailsView()),
   GetPage(name: kAddTaskView, page: () => const AddTaskView()),
 ];

@@ -17,9 +17,15 @@ class _SplashBodyState extends State<SplashBody>
   late Animation<Offset> slidinganmation;
 
   @override
-   initState()  {
-     animate();
-    Get.offNamed(kSignInView);
+  initState() {
+    animate();
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        Get.offNamed(kWelcomeView);
+      },
+    );
+    // Get.offNamed(kWelcomeView);
     super.initState();
   }
 
@@ -36,7 +42,7 @@ class _SplashBodyState extends State<SplashBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const SizedBox(height: 6),
-        textAnimation(slidinganmation: slidinganmation)
+        TextAnimation(slidinganmation: slidinganmation)
       ],
     );
   }
