@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/controller/button_navigator_bar_controller.dart';
 import 'package:gatherly/view/homepage/widget/bottom_navigate/appButtonNavigarBar.dart';
+import 'package:gatherly/view/homepage/widget/bottom_navigate/costom_appbar.dart';
 import 'package:get/get.dart';
 
 class BottomNavigationScreen extends StatelessWidget {
@@ -14,29 +15,18 @@ class BottomNavigationScreen extends StatelessWidget {
       length: 2,
       child: GetBuilder<ButtonNavigatorBarControllerImp>(builder: (controller) {
         return Scaffold(
-            appBar: AppBar(
-                title: Text(
-                  controller.appBarTilte(),
-                  style:
-                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
-                ),
-                centerTitle: true,
-                leading: const Icon(
-                  Icons.arrow_back,
-                ),
-                actions: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.more_horiz),
-                  ),
-                ],
-                bottom: controller.pageCount == 0
-                    ? const TabBar(tabs: [
-                        Tab(text: "About"),
-                        Tab(text: "Tasks"),
-                      ])
-                    : const PreferredSize(
-                        preferredSize: Size.zero, child: SizedBox())),
+            appBar: PreferredSize(
+                preferredSize: Size.fromHeight(100.h),
+                child: CustomAppBar(
+                  title: "Event details",
+                  bottom: controller.pageCount == 0
+                      ? const TabBar(tabs: [
+                          Tab(text: "About"),
+                          Tab(text: "Tasks"),
+                        ])
+                      : const PreferredSize(
+                          preferredSize: Size.zero, child: SizedBox()),
+                )),
             bottomNavigationBar: const AppBottomNavigatorBar(),
             // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
             // floatingActionButton: FloatingActionButton(

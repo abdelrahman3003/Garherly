@@ -3,6 +3,7 @@ import 'package:gatherly/view/auth/signup/signup_view.dart';
 import 'package:gatherly/view/event/join_event_view.dart';
 import 'package:gatherly/view/event/create_event.dart';
 import 'package:gatherly/view/homepage/buttom_navigator_bar.dart';
+import 'package:gatherly/view/homepage/widget/home/task_details.dart';
 
 import 'package:gatherly/view/splash/splash_view.dart';
 import 'package:gatherly/view/welcome/welcome_view.dart';
@@ -14,8 +15,9 @@ const kSignInView = "/SignInView";
 const kSignUpView = "/SignUpView";
 const kCreateEventView = "/CreateEventView";
 const kJoinEventView = "/JoinEventView";
-const kCreateEvent = "/kCreateEvent";
+const kCreateEvent = "/CreateEvent";
 const kBottomNavigationScreen = "/BottomNavigationScreen";
+const kTaskDetailsView = "/TaskDetailsView";
 
 const kHomeView = "/HomeView";
 List<GetPage<dynamic>>? getPages = [
@@ -26,4 +28,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kJoinEventView, page: () => const JoinEventView()),
   GetPage(name: kCreateEvent, page: () => const CreateEvent()),
   GetPage(name: "/", page: () => const BottomNavigationScreen()),
+  GetPage(name: kTaskDetailsView, page: () => const TaskDetailsView()),
 ];

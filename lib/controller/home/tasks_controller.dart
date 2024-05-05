@@ -1,10 +1,12 @@
+import 'package:gatherly/core/constatnt/routApp.dart';
 import 'package:get/get.dart';
 
-abstract class TaskController extends GetxController {
+abstract class TasksController extends GetxController {
   changeSlider(double val);
+  goToTaskDetails();
 }
 
-class TaskControllerImp extends TaskController {
+class TasksControllerImp extends TasksController {
   double? currentValue;
   @override
   void onInit() {
@@ -16,5 +18,10 @@ class TaskControllerImp extends TaskController {
   changeSlider(double val) {
     currentValue = val;
     update();
+  }
+
+  @override
+  goToTaskDetails() {
+    Get.toNamed(kTaskDetailsView);
   }
 }

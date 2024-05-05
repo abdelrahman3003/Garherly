@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
+  const CustomAppBar({super.key, required this.title, this.bottom});
+  final String title;
+  final PreferredSizeWidget? bottom;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 30),
-        Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_back),
-            ),
-            const Text(
-              "Event Details",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_horiz),
-            ),
-          ],
-        )
-      ],
-    );
+    return AppBar(
+        title: Text(
+          title,
+          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+        ),
+        centerTitle: true,
+        leading: const Icon(
+          Icons.arrow_back,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.more_horiz),
+          ),
+        ],
+        bottom: bottom);
   }
 }

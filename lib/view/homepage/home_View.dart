@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/view/homepage/widget/home/about.dart';
-import 'package:gatherly/view/homepage/widget/home/task_view.dart';
+import 'package:gatherly/view/homepage/widget/home/tasks_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
           child: SingleChildScrollView(child: About())),
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: TaskaView(),
+        child: TasksView(),
       )
     ]);
   }
