@@ -5,6 +5,7 @@ import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/core/constatnt/validation.dart';
 import 'package:gatherly/core/shared/app_button.dart';
 import 'package:gatherly/view/homepage/widget/bottom_navigate/costom_appbar.dart';
+import 'package:gatherly/view/homepage/widget/home/list_add_task.dart';
 import 'package:get/get.dart';
 
 class AddTaskView extends StatelessWidget {
@@ -17,101 +18,137 @@ class AddTaskView extends StatelessWidget {
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(50),
             child: CustomAppBar(title: "Add Task")),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 30),
-              Text(
-                "Task Title",
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Enter task name ",
-                  fillColor: AppColor.third,
-                  filled: true,
-                  focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColor.third, width: 1.3.h),
-                      borderRadius: BorderRadius.circular(25)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColor.third, width: 1.3.h),
-                      borderRadius: BorderRadius.circular(250)),
-                ),
-                validator: (val) {
-                  return validation(type: "Username", val: val!);
-                },
-              ),
-              const SizedBox(height: 10),
-              Text(
-                "Task Title",
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Check name ",
-                  fillColor: AppColor.third,
-                  filled: true,
-                  suffixIcon: Icon(
-                    Icons.check_box,
-                    color: AppColor.primary,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColor.third, width: 1.3.h),
-                      borderRadius: BorderRadius.circular(25)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColor.third, width: 1.3.h),
-                      borderRadius: BorderRadius.circular(250)),
-                ),
-                validator: (val) {
-                  return validation(type: "Username", val: val!);
-                },
-              ),
-              const SizedBox(height: 20),
-              Center(
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: AppColor.third,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.add,
-                        color: AppColor.primary,
-                      )),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Center(
-                child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: AppColor.secondry,
+        body: GetBuilder<AddTaskControllerImp>(builder: (controller) {
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Form(
+                key: controller.formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 30),
+                    Text(
+                      "Choose Member",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                    child: AppButton(
-                      name: "add task",
-                      onPressed: () {},
-                    )),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: AppColor.third,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: DropdownButton(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 5),
+                        dropdownColor: AppColor.third,
+                        value: controller.memberValue.isNotEmpty
+                            ? controller.memberValue
+                            : null, // guard it with null if empty
+                        hint: Text(
+                          'Your Section',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        isExpanded: true,
+                        underline: const SizedBox(),
+                        icon: const Icon(Icons.keyboard_arrow_down,
+                            color: Colors.black),
+                        iconSize: 30,
+                        items: controller.members.map((String items) {
+                          return DropdownMenuItem(
+                              value: items, child: Text(items));
+                        }).toList(),
+                        onChanged: (val) {
+                          controller.onChangeDropDownMember(val.toString());
+                        },
+                      ),
+                    ),
+                    Text(
+                      "Task Title",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Enter task name ",
+                        fillColor: AppColor.third,
+                        filled: true,
+                        focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: AppColor.third, width: 1.3.h),
+                            borderRadius: BorderRadius.circular(25)),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: AppColor.third, width: 1.3.h),
+                            borderRadius: BorderRadius.circular(250)),
+                      ),
+                      validator: (val) {
+                        return validation(type: "Username", val: val!);
+                      },
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          "Task checkbox  ",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          "  (optional)",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    const ListAddedTask(),
+                    const SizedBox(height: 20),
+                    Center(
+                      child: InkWell(
+                        onTap: controller.addCheck,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50.h, vertical: 10),
+                          decoration: BoxDecoration(
+                            color: AppColor.third,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Icon(
+                            Icons.add,
+                            color: AppColor.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Center(
+                      child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: AppColor.secondry,
+                          ),
+                          child: AppButton(
+                              name: "add task", onPressed: controller.addTask)),
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ));
+            ),
+          );
+        }));
   }
 }

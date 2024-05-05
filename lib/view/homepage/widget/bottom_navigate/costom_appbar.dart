@@ -15,9 +15,6 @@ class CustomAppBar extends StatelessWidget {
           style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading: const Icon(
-          Icons.arrow_back,
-        ),
         actions: [leading ?? const SizedBox()],
         bottom: bottom);
   }

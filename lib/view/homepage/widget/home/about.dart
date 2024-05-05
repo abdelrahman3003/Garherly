@@ -10,11 +10,11 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AboutItem(title: "Event title", text: "4-5-2024"),
         const SizedBox(height: 20),
+        const AboutItem(title: "Event title", text: "Event Name"),
         const AboutItem(title: "Event start date", text: "4-5-2024"),
-        const SizedBox(height: 20),
-        const AboutItem(title: "Event end date", text: "4-5-2024"),
+        const AboutItem(title: "Event end date", text: "10-5-2024"),
+        const AboutItem(title: "Member number", text: "5"),
         const SizedBox(height: 20),
         Container(
           height: 170.h,
