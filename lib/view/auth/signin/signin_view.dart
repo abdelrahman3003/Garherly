@@ -58,8 +58,14 @@ class SignInView extends StatelessWidget {
                     suffixIcon: InkWell(
                       onTap: controller.onScure,
                       child: controller.isScurePassword
-                          ? const Icon(Icons.visibility_off)
-                          : const Icon(Icons.visibility),
+                          ? const Icon(
+                              Icons.visibility,
+                              color: Colors.black,
+                            )
+                          : const Icon(
+                              Icons.visibility_off,
+                              color: Colors.black,
+                            ),
                     ),
                     filled: true,
                     focusedBorder: OutlineInputBorder(
@@ -77,18 +83,19 @@ class SignInView extends StatelessWidget {
                   obscureText: controller.isScurePassword,
                 ),
                 const SizedBox(height: 20),
-                     Center(
-                child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: AppColor.secondry,
-                    ),
-                    child: AppButton(
-                      name: "Log in",
-                      onPressed:  controller.signIn,
-                    )),
-              ),
+                Center(
+                  child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: AppColor.secondry,
+                      ),
+                      child: AppButton(
+                        name: "Log in",
+                        onPressed: controller.signIn,
+                      )),
+                ),
                 const Spacer(flex: 4),
               ],
             ),

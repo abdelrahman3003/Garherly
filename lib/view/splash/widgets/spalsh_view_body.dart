@@ -20,7 +20,7 @@ class _SplashBodyState extends State<SplashBody>
   initState() {
     animate();
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () {
         Get.offNamed(kWelcomeView);
       },

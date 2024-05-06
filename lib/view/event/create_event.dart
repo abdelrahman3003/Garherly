@@ -42,7 +42,6 @@ class CreateEvent extends StatelessWidget {
                   TextFormField(
                     decoration: InputDecoration(
                       hintText: "Type title",
-                      prefixIcon: const Icon(Icons.person),
                       fillColor: AppColor.third,
                       filled: true,
                       focusedBorder: OutlineInputBorder(
@@ -73,7 +72,6 @@ class CreateEvent extends StatelessWidget {
                       readOnly: true,
                       decoration: InputDecoration(
                         hintText: "Date of start event ",
-                        prefixIcon: const Icon(Icons.person),
                         fillColor: AppColor.third,
                         filled: true,
                         focusedBorder: OutlineInputBorder(
@@ -107,7 +105,6 @@ class CreateEvent extends StatelessWidget {
                       controller: controller.textEditingEndDateController,
                       decoration: InputDecoration(
                         hintText: "Date of end event",
-                        prefixIcon: const Icon(Icons.person),
                         fillColor: AppColor.third,
                         filled: true,
                         focusedBorder: OutlineInputBorder(
