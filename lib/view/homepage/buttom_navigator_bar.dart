@@ -20,7 +20,9 @@ class BottomNavigationScreen extends StatelessWidget {
             appBar: PreferredSize(
                 preferredSize: Size.fromHeight(100.h),
                 child: CustomAppBar(
-                  title: "Event details",
+                  title: controller.pageCount == 3
+                      ? "MY Profile"
+                      : "Event Details",
                   bottom: controller.pageCount == 0
                       ? const TabBar(tabs: [
                           Tab(text: "About"),
@@ -28,18 +30,21 @@ class BottomNavigationScreen extends StatelessWidget {
                         ])
                       : const PreferredSize(
                           preferredSize: Size.zero, child: SizedBox()),
-                  leading: Container(
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: AppColor.third,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: IconButton(
-                        onPressed: () {
-                          Get.toNamed(kAddTaskView);
-                        },
-                        icon: const Icon(
-                          Icons.add,
-                          color: AppColor.primary,
+                  leading: InkWell(
+                    onTap: () {
+                      Get.toNamed(kAddTaskView);
+                    },
+                    child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 16),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
+                        decoration: BoxDecoration(
+                            color: AppColor.third,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text(
+                          "Add task",
+                          style: TextStyle(
+                              fontSize: 16.sp, fontWeight: FontWeight.w500),
                         )),
                   ),
                 )),

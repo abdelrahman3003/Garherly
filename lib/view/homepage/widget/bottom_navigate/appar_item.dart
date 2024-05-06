@@ -22,7 +22,7 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
               controller.changepage(1);
             } else if (icon == Icons.chat) {
               controller.changepage(2);
-            } else if (icon == Icons.menu) {
+            } else if (icon == Icons.person) {
               controller.changepage(3);
             } else {
               controller.changepage(0);
