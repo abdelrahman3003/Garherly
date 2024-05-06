@@ -3,10 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar(
-      {super.key, required this.title, this.bottom, this.leading});
+      {super.key,
+      required this.title,
+      this.bottom,
+      this.leading,
+      this.training});
   final String title;
   final PreferredSizeWidget? bottom;
   final Widget? leading;
+  final Widget? training;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -15,7 +20,15 @@ class CustomAppBar extends StatelessWidget {
           style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        actions: [leading ?? const SizedBox()],
-        bottom: bottom);
+        actions: [training ?? const SizedBox()],
+        bottom: bottom,
+        leading: leading
+
+        // IconButton(
+        //     onPressed: () {
+        //       Get.back();
+        //     },
+        //     icon: Icon(Icons.arrow_back)),
+        );
   }
 }

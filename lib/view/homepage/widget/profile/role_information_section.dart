@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatherly/core/constatnt/app_color.dart';
-import 'package:gatherly/view/homepage/widget/profile/widget/tilte_value_row.dart';
+import 'package:gatherly/view/homepage/widget/profile/tilte_value_row.dart';
 
 class RoleInformationSection extends StatelessWidget {
   const RoleInformationSection({super.key});

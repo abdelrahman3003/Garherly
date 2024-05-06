@@ -22,10 +22,10 @@ class _SplashBodyState extends State<SplashBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.offNamed(kWelcomeView);
+        Get.toNamed(kBottomNavigationScreen);
       },
     );
-    // Get.offNamed(kWelcomeView);
+
     super.initState();
   }
 

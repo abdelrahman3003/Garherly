@@ -18,11 +18,17 @@ class BottomNavigationScreen extends StatelessWidget {
       child: GetBuilder<ButtonNavigatorBarControllerImp>(builder: (controller) {
         return Scaffold(
             appBar: PreferredSize(
-                preferredSize: Size.fromHeight(100.h),
+                preferredSize: controller.pageCount == 0
+                    ? Size.fromHeight(100.h)
+                    : Size.fromHeight(50.h),
                 child: CustomAppBar(
                   title: controller.pageCount == 3
                       ? "MY Profile"
-                      : "Event Details",
+                      : controller.pageCount == 2
+                          ? "Add Vote"
+                          : controller.pageCount == 1
+                              ? "Chat"
+                              : "Event Details",
                   bottom: controller.pageCount == 0
                       ? const TabBar(tabs: [
                           Tab(text: "About"),
@@ -30,30 +36,36 @@ class BottomNavigationScreen extends StatelessWidget {
                         ])
                       : const PreferredSize(
                           preferredSize: Size.zero, child: SizedBox()),
-                  leading: InkWell(
-                    onTap: () {
-                      Get.toNamed(kAddTaskView);
-                    },
-                    child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 16),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        decoration: BoxDecoration(
-                            color: AppColor.third,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Text(
-                          "Add task",
-                          style: TextStyle(
-                              fontSize: 16.sp, fontWeight: FontWeight.w500),
-                        )),
-                  ),
+                  training: controller.pageCount == 2
+                      ? InkWell(
+                          onTap: () {
+                            Get.toNamed(kAddVoteView);
+                          },
+                          child: Container(
+                              margin: const EdgeInsets.only(right: 10),
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: AppColor.secondry),
+                              child: const Text("add vote")),
+                        )
+                      : const SizedBox(),
                 )),
             bottomNavigationBar: const AppBottomNavigatorBar(),
-            // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-            // floatingActionButton: FloatingActionButton(
-            //     backgroundColor: AppColor.primary,
-            //     onPressed: () {},
-            //     child: const Icon(Icons.home)),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            floatingActionButton: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton(
+                  backgroundColor: AppColor.primary,
+                  onPressed: () {
+                    Get.toNamed(kAddTaskView);
+                  },
+                  child: const Icon(
+                    Icons.add,
+                    size: 32,
+                  )),
+            ),
             body: GetBuilder<ButtonNavigatorBarControllerImp>(
               builder: (controllerbuild) {
                 return SafeArea(

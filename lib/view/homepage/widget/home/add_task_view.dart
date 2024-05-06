@@ -17,7 +17,9 @@ class AddTaskView extends StatelessWidget {
     return Scaffold(
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(50),
-            child: CustomAppBar(title: "Add Task")),
+            child: CustomAppBar(
+              title: "Add Task",
+            )),
         body: GetBuilder<AddTaskControllerImp>(builder: (controller) {
           return SingleChildScrollView(
             child: Padding(
@@ -27,7 +29,7 @@ class AddTaskView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Text(
                       "Choose Member",
                       style: TextStyle(

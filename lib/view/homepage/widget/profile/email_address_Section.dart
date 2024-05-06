@@ -22,6 +22,8 @@ class EmailAddressSection extends StatelessWidget {
           child: Text(
             email,
             style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+            maxLines: 1,
+            overflow: TextOverflow.clip,
           ),
         ),
       ],

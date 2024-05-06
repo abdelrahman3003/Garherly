@@ -15,12 +15,13 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         IconButton(
           onPressed: () {
-            if (icon == Icons.group) {
+            if (icon == Icons.chat) {
               controller.changepage(1);
-            } else if (icon == Icons.chat) {
+            } else if (icon == Icons.how_to_vote) {
               controller.changepage(2);
             } else if (icon == Icons.person) {
               controller.changepage(3);
@@ -28,12 +29,13 @@ class AppbarItem extends GetView<ButtonNavigatorBarControllerImp> {
               controller.changepage(0);
             }
           },
-          icon: Icon(icon, color: isactive ? Colors.black : Colors.white),
+          icon: Icon(icon,
+              color: isactive ? Colors.black : Colors.white, size: 27),
         ),
-        // Text(
-        //   iconName,
-        //   style: Styles.textStyle16,
-        // ),
+        Text(
+          iconName,
+          style: TextStyle(color: isactive ? Colors.black : Colors.white),
+        ),
       ],
     );
   }
