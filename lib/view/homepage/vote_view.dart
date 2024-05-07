@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gatherly/controller/vote/Vote_controller.dart';
-import 'package:gatherly/view/homepage/widget/vote/widget/vote_View_body.dart';
+import 'package:gatherly/view/homepage/widget/vote/widget/vote_view_body.dart';
 import 'package:get/get.dart';
 
 class VoteView extends StatelessWidget {

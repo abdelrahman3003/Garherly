@@ -8,8 +8,6 @@ import 'package:gatherly/view/homepage/vote_view.dart';
 import 'package:gatherly/view/homepage/widget/home/add_task_view.dart';
 import 'package:gatherly/view/homepage/widget/home/task_details.dart';
 import 'package:gatherly/view/homepage/widget/vote/add_vote_view.dart';
-import 'package:gatherly/view/homepage/widget/vote/widget/add_vote_view_body.dart';
-
 import 'package:gatherly/view/splash/splash_view.dart';
 import 'package:gatherly/view/welcome/welcome_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
