@@ -5,6 +5,8 @@ import 'package:gatherly/core/constatnt/app_color.dart';
 import 'package:gatherly/core/constatnt/routApp.dart';
 import 'package:gatherly/view/homepage/widget/bottom_navigate/appButtonNavigarBar.dart';
 import 'package:gatherly/view/homepage/widget/bottom_navigate/costom_appbar.dart';
+import 'package:gatherly/view/homepage/widget/chat/chat_appbar.dart';
+import 'package:gatherly/view/homepage/widget/vote/widget/popMenu_vote.dart';
 import 'package:get/get.dart';
 
 class BottomNavigationScreen extends StatelessWidget {
@@ -18,54 +20,52 @@ class BottomNavigationScreen extends StatelessWidget {
       child: GetBuilder<ButtonNavigatorBarControllerImp>(builder: (controller) {
         return Scaffold(
             appBar: PreferredSize(
-                preferredSize: controller.pageCount == 0
-                    ? Size.fromHeight(100.h)
-                    : Size.fromHeight(50.h),
-                child: CustomAppBar(
-                  title: controller.pageCount == 3
-                      ? "MY Profile"
-                      : controller.pageCount == 2
-                          ? "Add Vote"
-                          : controller.pageCount == 1
-                              ? "Chat"
-                              : "Event Details",
-                  bottom: controller.pageCount == 0
-                      ? const TabBar(tabs: [
-                          Tab(text: "About"),
-                          Tab(text: "Tasks"),
-                        ])
-                      : const PreferredSize(
-                          preferredSize: Size.zero, child: SizedBox()),
-                  training: controller.pageCount == 2
-                      ? InkWell(
-                          onTap: () {
-                            Get.toNamed(kAddVoteView);
-                          },
-                          child: Container(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: AppColor.secondry),
-                              child: const Text("add vote")),
-                        )
-                      : const SizedBox(),
-                )),
-            bottomNavigationBar: const AppBottomNavigatorBar(),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked,
-            floatingActionButton: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FloatingActionButton(
-                  backgroundColor: AppColor.primary,
-                  onPressed: () {
-                    Get.toNamed(kAddTaskView);
-                  },
-                  child: const Icon(
-                    Icons.add,
-                    size: 32,
-                  )),
+              preferredSize: controller.pageCount == 0
+                  ? Size.fromHeight(100.h)
+                  : Size.fromHeight(50.h),
+              child: CustomAppBar(
+                title: controller.pageCount == 3
+                    ? "MY Profile"
+                    : controller.pageCount == 2
+                        ? "Add Vote"
+                        : controller.pageCount == 1
+                            ? "Add task"
+                            : "Event Details",
+                bottom: controller.pageCount == 0
+                    ? const TabBar(tabs: [
+                        Tab(text: "About"),
+                        Tab(text: "Tasks"),
+                      ])
+                    : const PreferredSize(
+                        preferredSize: Size.zero, child: SizedBox()),
+                actions: [
+                  IconButton(
+                      onPressed: () {
+                        Get.toNamed(kChatView);
+                      },
+                      icon: const Icon(Icons.chat)),
+                  controller.pageCount == 2
+                      ? const PopmenuVote()
+                      : const SizedBox()
+                ],
+              ),
             ),
+            bottomNavigationBar: const AppBottomNavigatorBar(),
+            // floatingActionButtonLocation: controller.pageCount == 1
+            //     ? null
+            //     : FloatingActionButtonLocation.centerDocked,
+            // floatingActionButton: Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: FloatingActionButton(
+            //       backgroundColor: AppColor.primary,
+            //       onPressed: () {
+            //         Get.toNamed(kAddTaskView);
+            //       },
+            //       child: const Icon(
+            //         Icons.add,
+            //         size: 32,
+            //       )),
+            // ),
             body: GetBuilder<ButtonNavigatorBarControllerImp>(
               builder: (controllerbuild) {
                 return SafeArea(

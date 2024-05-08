@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gatherly/controller/button_navigator_bar_controller.dart';
+import 'package:get/get.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar(
-      {super.key,
-      required this.title,
-      this.bottom,
-      this.leading,
-      this.training});
+class CustomAppBar extends GetView<ButtonNavigatorBarControllerImp> {
+  const CustomAppBar({
+    super.key,
+    required this.title,
+    this.bottom,
+    this.leading,
+    this.actions,
+  });
   final String title;
   final PreferredSizeWidget? bottom;
   final Widget? leading;
-  final Widget? training;
+  final List<Widget>? actions;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -20,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
           style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        actions: [training ?? const SizedBox()],
+        actions: actions,
         bottom: bottom,
         leading: leading
 

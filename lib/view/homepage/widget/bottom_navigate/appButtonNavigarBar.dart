@@ -25,8 +25,8 @@ class AppBottomNavigatorBar extends StatelessWidget {
                 isactive: controller.pageCount == 0 ? true : false,
               ),
               AppbarItem(
-                icon: Icons.chat,
-                iconName: "Chat",
+                icon: Icons.add,
+                iconName: "Task",
                 isactive: controller.pageCount == 1 ? true : false,
               ),
               AppbarItem(

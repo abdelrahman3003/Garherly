@@ -3,6 +3,7 @@ import 'package:gatherly/view/auth/signup/signup_view.dart';
 import 'package:gatherly/view/event/join_event_view.dart';
 import 'package:gatherly/view/event/create_event.dart';
 import 'package:gatherly/view/homepage/buttom_navigator_bar.dart';
+import 'package:gatherly/view/homepage/chat_view.dart';
 import 'package:gatherly/view/homepage/profile_view.dart';
 import 'package:gatherly/view/homepage/vote_view.dart';
 import 'package:gatherly/view/homepage/widget/home/add_task_view.dart';
@@ -26,6 +27,7 @@ const kProfileView = "/ProfileView";
 const kHomeView = "/HomeView";
 const kVoteView = "/KVoteView";
 const kAddVoteView = "/AddVoteView";
+const kChatView = "/ChatView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(name: "/", page: () => const SplashView()),
   GetPage(name: kWelcomeView, page: () => const WelcomeView()),
@@ -39,4 +41,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kProfileView, page: () => const ProfileView()),
   GetPage(name: kVoteView, page: () => const VoteView()),
   GetPage(name: kAddVoteView, page: () => const AddVoteView()),
+  GetPage(name: kChatView, page: () => const ChatView()),
 ];

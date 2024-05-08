@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gatherly/view/homepage/chat_view.dart';
 import 'package:gatherly/view/homepage/home_View.dart';
 import 'package:gatherly/view/homepage/profile_view.dart';
 import 'package:gatherly/view/homepage/vote_view.dart';
+import 'package:gatherly/view/homepage/widget/home/add_task_view.dart';
+import 'package:gatherly/view/homepage/widget/home/tasks_view.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 abstract class ButtonNavigatorBarController extends GetxController {
@@ -15,7 +16,7 @@ class ButtonNavigatorBarControllerImp extends ButtonNavigatorBarController {
   bool isbar = true;
   List<Widget> pageList = [
     const HomeView(),
-    const ChatView(),
+    const AddTaskView(),
     const VoteView(),
     const ProfileView(),
   ];
