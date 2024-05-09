@@ -35,8 +35,8 @@ class AppBottomNavigatorBar extends StatelessWidget {
                 isactive: controller.pageCount == 2 ? true : false,
               ),
               AppbarItem(
-                icon: Icons.person,
-                iconName: "Profile",
+                icon: Icons.menu,
+                iconName: "Roles",
                 isactive: controller.pageCount == 3 ? true : false,
               ),
             ],
